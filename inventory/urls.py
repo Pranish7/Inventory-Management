@@ -1,6 +1,7 @@
 from django.urls import path, include
-from . views import VendorModel, CustomerModel, CustomerDetailView, VendorDetailView, EmployeeModel, EmployeeDetailView, CategoryModel, CategoryDetailView, ProductModel, ProductDetailView, ProducttypeModel, ProducttypeDetailView, WarrantyModel, WarrantyDetailView, PurchaseModel, PurchaseDetailView, TransactionModel, TransactionDetailView 
+# from . views import VendorModel, CustomerModel, CustomerDetailView, VendorDetailView, EmployeeModel, EmployeeDetailView, CategoryModel, CategoryDetailView, ProductModel, ProductDetailView, ProducttypeModel, ProducttypeDetailView, WarrantyModel, WarrantyDetailView, PurchaseModel, PurchaseDetailView, TransactionModel, TransactionDetailView 
 from rest_framework.routers import DefaultRouter
+from .views import *
 
 # router = DefaultRouter()
 # router.register('vendor', VendorModel, basename='vendor')

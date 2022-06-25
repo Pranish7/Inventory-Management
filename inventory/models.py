@@ -47,7 +47,7 @@ class Product(models.Model):
         
     
 class Warranty(models.Model):
-    product = models.ForeignKey("product", on_delete=models.CASCADE)
+    product = models.ForeignKey("Product", on_delete=models.CASCADE)
     vendor = models.ForeignKey("Vendor", on_delete=models.CASCADE)
     purchase = models.ForeignKey("Purchase", on_delete=models.CASCADE)
     

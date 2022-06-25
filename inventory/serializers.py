@@ -1,4 +1,5 @@
-from .models import Employee, Customer, Vendor, Product, Producttype, Category, Transaction, Purchase, Warranty
+# from .models import Employee, Customer, Vendor, Product, Producttype, Category, Transaction, Purchase, Warranty
+from .models import *
 from rest_framework import serializers
 
 class VendorSerializer(serializers.ModelSerializer):

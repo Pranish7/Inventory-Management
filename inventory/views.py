@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from .models import Employee, Customer, Vendor, Product, Producttype, Category, Transaction, Purchase, Warranty
-from .serializers import VendorSerializer, CustomerSerializer, EmployeeSerializer, ProductSerializer, PurchaseSerializer, TransactionSerializer, WarrantySerializer, CategorySerializer, ProducttypeSerializer
+from .models import *
+# from .models import Employee, Customer, Vendor, Product, Producttype, Category, Transaction, Purchase, Warranty
+# from .serializers import VendorSerializer, CustomerSerializer, EmployeeSerializer, ProductSerializer, PurchaseSerializer, TransactionSerializer, WarrantySerializer, CategorySerializer, ProducttypeSerializer
+from .serializers import *
 from rest_framework import viewsets
 from rest_framework.views import APIView
 from rest_framework import status
@@ -288,21 +290,21 @@ class WarrantyDetailView(APIView):
         warranty.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
     
-class PurchaseModel(APIView):
-    def get(self, request):
-        purchases = Purchase.objects.all()
-        serializer = PurchaseSerializer(purchases, many = True)
-        return Response(serializer.data)
+# class PurchaseModel(APIView):
+#     def get(self, request):
+#         purchases = Purchase.objects.all()
+#         serializer = PurchaseSerializer(purchases, many = True)
+#         return Response(serializer.data)
     
-    def post(self, request):
-        serializer = PurchaseSerializer(data=request.data)  
+#     def post(self, request):
+#         serializer = PurchaseSerializer(data=request.data)  
         
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data, status=status.HTTP_200_OK)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-class PurchaseDetailView(APIView):
+# class PurchaseDetailView(APIView):
     def get_object(self, id):
         try:
             return Purchase.objects.get(id=id)

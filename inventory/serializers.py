@@ -13,6 +13,8 @@ class EmployeeSerializer(serializers.ModelSerializer):
         fields = '__all__'
         
 class CustomerSerializer(serializers.ModelSerializer):
+    # name = serializers.CharField(source='customer.name', read_only=True)
+    # email = serializers.EmailField(source='customer.email', read_only=True)
     class Meta:
         model = Customer
         fields = '__all__'
@@ -32,10 +34,10 @@ class TransactionSerializer(serializers.ModelSerializer):
         model = Transaction
         fields = '__all__'
         
-class PurchaseSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Purchase
-        fields = '__all__'
+# class PurchaseSerializer(serializers.ModelSerializer):
+    # class Meta:
+    #     model = Purchase
+    #     fields = '__all__'
         
 class ProducttypeSerializer(serializers.ModelSerializer):
     class Meta:

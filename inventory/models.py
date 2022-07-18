@@ -40,23 +40,29 @@ class Producttype(models.Model):
         return self.name
 
 class Product(models.Model):
+    name = models.CharField(max_length=100)
     producttype = models.ForeignKey("Producttype", on_delete=models.CASCADE)
     category = models.ForeignKey("Category", on_delete=models.CASCADE)
     vendor = models.ForeignKey("Vendor", on_delete=models.CASCADE)
-    purchase = models.ForeignKey("Purchase", on_delete=models.CASCADE)
-        
+    # purchase = models.ForeignKey("Purchase", on_delete=models.CASCADE)
+    price = models.IntegerField()
     
 class Warranty(models.Model):
     product = models.ForeignKey("Product", on_delete=models.CASCADE)
     vendor = models.ForeignKey("Vendor", on_delete=models.CASCADE)
-    purchase = models.ForeignKey("Purchase", on_delete=models.CASCADE)
+    # purchase = models.ForeignKey("Purchase", on_delete=models.CASCADE)
     
 class Transaction(models.Model):
     employee = models.ForeignKey("Employee", on_delete=models.CASCADE)
     customer = models.ForeignKey("Customer", on_delete=models.CASCADE)
     product = models.ForeignKey("Product", on_delete=models.CASCADE)
     product_issuedate = models.DateTimeField(auto_now_add=True)
+
+# class Purchase(models.Model):
+#     dateofpurchase = models.DateTimeField(auto_now_add=True)
+#     price = models.IntegerField()
     
-class Purchase(models.Model):
-    dateofpurchase = models.DateTimeField(auto_now_add=True)
-    price = models.IntegerField() 
+#     def __str__(self):
+#         return str(self.price)
+    
+    

@@ -6,6 +6,10 @@ from Users.views import *
 
 router = DefaultRouter()
 router.register('users',UserAPIView,basename='users')
+# router.register('login',UserLoginView,basename='login'),
+# router.register('logout',UserLogoutView,basename='logout')
+
+
 # router.register('vendor', VendorModel, basename='vendor')
 # # router.register('customer', CustomerModel, basename='customer')
 
@@ -30,7 +34,7 @@ urlpatterns = [
     path('transaction/<int:id>', TransactionDetailView.as_view()),
     path('product/<int:id>', ProductDetailView.as_view()),
     path('warranty/<int:id>', WarrantyDetailView.as_view()),
-    # path('users/', UserAPIView),
+    # path('users/', UserAPIView.as_view()),
     path('login/',UserLoginView.as_view()),
     path('logout/',UserLogoutView.as_view()),
 ]

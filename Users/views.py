@@ -63,8 +63,7 @@ class UserAPIView(viewsets.ModelViewSet):
 
 
     def get_queryset(self):
-            # import pdb;pdb.set_trace()
-            return self.queryset
+            # return self.queryset
             if self.request.user.is_superuser:
                 return User.objects.all()
             else:

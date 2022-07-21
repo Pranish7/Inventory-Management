@@ -55,11 +55,12 @@ class CustomUsersSerializer(ModelSerializer):
             username=validated_data['username'],
             email=validated_data['email'],
             first_name=validated_data['first_name'],
-            middle_name=validated_data['middle_name'],
+            middle_name=validated_data[ 'middle_name'],
             last_name=validated_data['last_name'],
             contact_no=validated_data['contact_no'],
             # group=validated_data['group'],
             gender=validated_data['gender'],
+            is_staff=validated_data['is_staff'],
             photo=validated_data['photo'],
         )
 
